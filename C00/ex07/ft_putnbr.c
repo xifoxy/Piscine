@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 14:55:23 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/06 14:58:12 by sgang            ###   ########.fr       */
+/*   Created: 2020/07/06 15:42:41 by sgang             #+#    #+#             */
+/*   Updated: 2020/07/06 15:55:13 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_comb(void)
+void	recur(int num)
 {
-	char str[5];
+	char ch;
 
-	str[0] = '0' - 1;
-	str[3] = ',';
-	str[4] = ' ';
-	while (++str[0] <= '6')
-	{
-		str[1] = str[0];
-		while (++str[1] <= '7')
-		{
-			str[2] = str[1];
-			while (++str[2] <= '9')
-			{
-				write(1, str, 5);
-			}
-		}
-	}
-	write(1, "789", 3);
+	if (!num)
+		return ;
+	ch = num % 10 + '0';
+	recur(num % 10);
+	write(1, ch, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
+		write(1, "-", 1);
+	else if (!nb)
+		write(1, 0, 1);
+	recur(nb);
 }
