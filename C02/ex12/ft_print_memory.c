@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
+/*   By: sgang </var/mail/sgang>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 18:50:12 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/06 20:28:17 by sgang            ###   ########.fr       */
+/*   Created: 2020/07/06 21:19:08 by sgang             #+#    #+#             */
+/*   Updated: 2020/07/06 21:19:56 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+void 	*ft_print_memory(void *addr, unsigned int size)
 {
-	unsigned int idx;
 
-	idx = 0;
-	while (idx < size - 1 && src[idx])
-		dest[idx] = src[idx++];
-	dest[idx] = '\n';
-	while (src[idx])
-		++idx;
-	return (idx);
 }
