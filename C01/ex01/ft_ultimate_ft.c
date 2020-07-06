@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgang </var/mail/sgang>                    +#+  +:+       +#+        */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/04 21:48:29 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/04 21:51:04 by sgang            ###   ########.fr       */
+/*   Created: 2020/07/06 17:08:55 by sgang             #+#    #+#             */
+/*   Updated: 2020/07/06 17:09:05 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_ultimate_ft(int *********nbr)
+void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
 }
-

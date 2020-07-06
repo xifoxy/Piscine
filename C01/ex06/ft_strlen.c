@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgang </var/mail/sgang>                    +#+  +:+       +#+        */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/04 21:46:48 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/04 21:47:11 by sgang            ###   ########.fr       */
+/*   Created: 2020/07/06 17:13:35 by sgang             #+#    #+#             */
+/*   Updated: 2020/07/06 17:14:22 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int len = 0;
-	while(str[len]) ++len;
-	return len;
+	int len;
+
+	len = 0;
+	while (str[len])
+		++len;
+	return (len);
 }

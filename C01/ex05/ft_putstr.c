@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgang </var/mail/sgang>                    +#+  +:+       +#+        */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/04 21:46:02 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/04 21:46:11 by sgang            ###   ########.fr       */
+/*   Created: 2020/07/06 17:12:29 by sgang             #+#    #+#             */
+/*   Updated: 2020/07/06 17:13:09 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-	int len = 0;
+	int len;
 
-	while(str[len]) ++len;
+	len = 0;
+	while (str[len])
+		++len;
 	write(1, str, len);
 }

@@ -3,25 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgang </var/mail/sgang>                    +#+  +:+       +#+        */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/04 21:47:26 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/04 21:47:58 by sgang            ###   ########.fr       */
+/*   Created: 2020/07/06 17:15:13 by sgang             #+#    #+#             */
+/*   Updated: 2020/07/06 17:15:41 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_rev_int_tab(int *tab, int size)
+void	ft_rev_int_tab(int *tab, int size)
 {
 	int i;
 	int temp;
 
 	i = 0;
-	while(i < --size)
+	while (i < --size)
 	{
 		temp = tab[size];
 		tab[size] = tab[i];
 		tab[i++] = temp;
 	}
-
 }
-
