@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 15:57:00 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/06 17:05:34 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/06 17:20:39 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,8 @@ void	ft_print(int num, int depth)
 	write(1, &ch, 1);
 }
 
-void	sol(int idx, int sz, int depth, int num, int last_num)
+void	sol(int idx, int sz, int depth, int num)
 {
-	if (num == last_num)
-	{
-		ft_print(last_num, depth);
-		return ;
-	}
 	if (depth == sz)
 	{
 		ft_print(num, depth);
@@ -39,7 +34,7 @@ void	sol(int idx, int sz, int depth, int num, int last_num)
 		return ;
 	}
 	while (idx < 9)
-		sol(idx + 1, sz, depth + 1, num * 10 + g_num[idx++ + 1], last_num);
+		sol(idx + 1, sz, depth + 1, num * 10 + g_num[idx++ + 1]);
 }
 
 void	ft_print_combn(int n)
@@ -55,5 +50,6 @@ void	ft_print_combn(int n)
 		g_num[i++] = i;
 	while (tmp)
 		last_num = last_num * 10 + (10 - tmp--);
-	sol(0, n, 0, 0, last_num);
+	sol(0, n - 1, 0, 0);
+	ft_print(last_num, n);
 }
