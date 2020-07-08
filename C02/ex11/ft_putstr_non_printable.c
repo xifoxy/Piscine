@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:30:48 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/08 21:22:42 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/08 21:25:46 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		isprint(unsigned char ch)
 
 void	hprint(unsigned char ch)
 {
-	ch = ch > '9' ? 39 : 0;
+	ch = ch > '9' ? 39 : '0';
 	write(1, &ch, 1);
 }
 
