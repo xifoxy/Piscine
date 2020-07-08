@@ -6,13 +6,13 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/05 18:30:10 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/06 03:28:05 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/08 20:31:13 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_is_negativ(int n)
+void	ft_is_negative(int n)
 {
 	char ch;
 
