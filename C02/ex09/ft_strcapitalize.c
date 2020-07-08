@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 18:35:21 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/08 19:26:43 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/08 21:19:53 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ int		is_upper(char ch)
 
 int		is_word(char ch)
 {
-	return (is_num(ch) || is_lowr(ch) || is_upper(ch));
+	return (is_num(ch) || is_lower(ch) || is_upper(ch));
 }
 
 char	*ft_strcapitalize(char *str)
 {
 	int idx;
 
-	idx = 1;
 	if (is_lower(str[0]))
 		str[idx] += -32;
+	idx = 1;
 	while (str[idx])
 	{
 		if (is_upper(str[idx]))

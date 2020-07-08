@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:30:48 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/06 21:18:37 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/08 21:22:42 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	ft_putstr_non_printable(char *str)
 		if (!isprint(str[idx]))
 		{
 			write(1, '\\', 1);
-			hprint(std[idx] / 16);
-			hprint(std[idx] % 16);
+			hprint(str[idx] / 16);
+			hprint(str[idx] % 16);
 		}
 		else
 			write(1, &str[idx], 1);
