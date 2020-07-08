@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 15:57:00 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/08 16:00:38 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/08 16:48:52 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	sol(int prev, int depth, int n)
 		write(1, ", ", 2);
 		return ;
 	}
-	if (prev == 9) return ;
+	if (prev == 9)
+		return ;
 	i = prev;
 	while (++i < 10)
 	{
@@ -36,7 +37,7 @@ void	sol(int prev, int depth, int n)
 void	ft_print_combn(int n)
 {
 	int i;
-	
+
 	i = -1;
 	while (++i < 10 - n)
 	{
@@ -44,7 +45,7 @@ void	ft_print_combn(int n)
 		sol(i, 1, n);
 	}
 	i = -1;
-	while(++i < n)
+	while (++i < n)
 		g_buf[i] = '0' + (10 - n + i);
 	write(1, g_buf, n);
 }
