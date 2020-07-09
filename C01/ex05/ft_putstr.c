@@ -6,14 +6,14 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 17:12:29 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/09 20:07:24 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/09 20:13:28 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 void	ft_putstr(char *str)
-{w
+{
 	int len;
 
 	len = 0;
