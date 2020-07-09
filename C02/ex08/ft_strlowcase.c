@@ -6,11 +6,11 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 18:29:45 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/06 18:34:50 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/09 19:03:46 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		isupper(char ch)
+int		is_upper(char ch)
 {
 	return (ch >= 'A' && ch <= 'Z');
 }
@@ -22,7 +22,7 @@ char	*ft_strlowcase(char *str)
 	idx = 0;
 	while (str[idx])
 	{
-		if (isupper(str[idx]))
+		if (is_upper(str[idx]))
 			str[idx] -= -32;
 		++idx;
 	}

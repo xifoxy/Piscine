@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 21:37:19 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/08 23:00:53 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/09 19:07:06 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	ft_translation_hex(char ch)
 
 void	ft_make_addr(long long ptr, int cnt)
 {
-	char ch;
-
 	if (!ptr)
 	{
 		while (cnt < 16)
@@ -75,7 +73,7 @@ void	*ft_print_memory(void *addr, unsigned int size)
 			len = 16;
 		else
 			len = size;
-		ptr = (unsigned char*)arr + idx;
+		ptr = (unsigned char*)addr + idx;
 		ft_make_addr((long long)ptr, 0);
 		ft_print(':');
 		ft_translation_addr(ptr, len);
@@ -83,7 +81,7 @@ void	*ft_print_memory(void *addr, unsigned int size)
 		write(1, g_str, len);
 		ft_print('\n');
 		size += -len;
-		i -= -16;
+		idx -= -16;
 	}
 	return (addr);
 }

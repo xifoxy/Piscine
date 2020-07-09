@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 18:35:21 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/08 21:19:53 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/09 19:04:20 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strcapitalize(char *str)
 	int idx;
 
 	if (is_lower(str[0]))
-		str[idx] += -32;
+		str[0] += -32;
 	idx = 1;
 	while (str[idx])
 	{

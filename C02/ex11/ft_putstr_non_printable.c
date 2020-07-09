@@ -6,13 +6,13 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:30:48 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/08 21:36:08 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/09 19:06:01 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		isprint(unsigned char ch)
+int		is_print(unsigned char ch)
 {
 	return (ch >= ' ' && ch <= '~');
 }
@@ -31,7 +31,7 @@ void	ft_putstr_non_printable(char *str)
 	idx = 0;
 	while (str[idx])
 	{
-		if (!isprint(str[idx]))
+		if (!is_print(str[idx]))
 		{
 			write(1, "\\", 1);
 			hprint(str[idx] / 16);
