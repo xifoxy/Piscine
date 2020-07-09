@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 20:30:48 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/09 20:05:17 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/10 02:07:11 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,17 @@ int		is_print(char ch)
 	return (ch >= ' ' && ch <= '~');
 }
 
-void	hprint(char ch)
+void	hprint(unsigned char ch)
 {
 	ch += '0';
-	if (ch > '9')
-		ch += 39;
+	ch += (ch > '9' ? 39 : 0);
 	write(1, &ch, 1);
+}
+
+void	trans_hex(unsigned char ch)
+{
+	hprint((int)ch / 16);
+	hprint((int)ch % 16);
 }
 
 void	ft_putstr_non_printable(char *str)
@@ -35,8 +40,7 @@ void	ft_putstr_non_printable(char *str)
 		if (!is_print(str[idx]))
 		{
 			write(1, "\\", 1);
-			hprint((int)str[idx] / 16);
-			hprint((int)str[idx] % 16);
+			trans_hex(str[idx]);
 		}
 		else
 			write(1, &str[idx], 1);
