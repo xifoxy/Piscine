@@ -6,18 +6,21 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 23:18:53 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/08 23:27:14 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/14 16:34:35 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
+	char *s1;
+
+	s1 = dest;
 	while (*dest++)
 		;
 	dest--;
 	while (nb--)
 		if (!(*dest++ = *src++))
-			return (dest);
+			return (s1);
 	*dest = 0;
-	return (dest);
+	return (s1);
 }
