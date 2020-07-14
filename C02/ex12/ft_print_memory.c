@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 21:37:19 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/10 01:32:45 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/14 16:11:33 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 char g_str[16];
 
-void				ft_print(char ch)
+void			ft_print(char ch)
 {
 	write(1, &ch, 1);
 }
 
-void				ft_translation_hex(char ch)
+void			ft_translation_hex(char ch)
 {
 	ch += '0';
 	ch += ch > '9' ? 39 : 0;
 	ft_print(ch);
 }
 
-void				ft_make_addr(long long ptr, int cnt)
+void			ft_make_addr(long long ptr, int cnt)
 {
 	if (!ptr)
 	{
@@ -41,9 +41,9 @@ void				ft_make_addr(long long ptr, int cnt)
 	ft_translation_hex(ptr % 16);
 }
 
-void				ft_translation_addr(unsigned char *ptr, unsigned int len)
+void			ft_translation_addr(unsigned char *ptr, unsigned int len)
 {
-	unsigned int	idx;
+	unsigned int idx;
 
 	idx = 0;
 	while (idx < len)
@@ -58,9 +58,17 @@ void				ft_translation_addr(unsigned char *ptr, unsigned int len)
 		ft_translation_hex(ptr[idx] % 16);
 		++idx;
 	}
+	while (idx < 16)
+	{
+		if (idx % 2 == 0)
+			ft_print(' ');
+		ft_print(' ');
+		ft_print(' ');
+		++idx;
+	}
 }
 
-void				*ft_print_memory(void *addr, unsigned int size)
+void			*ft_print_memory(void *addr, unsigned int size)
 {
 	unsigned int	idx;
 	unsigned int	len;
