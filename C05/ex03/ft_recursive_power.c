@@ -12,9 +12,7 @@
 
 int	ft_recursive_power(int nb, int power)
 {
-	if (!nb || !power)
-		return (1);
-	if (nb < 0)
-		return (0);
-	return (nb * ft_recursive_power(nb, pwoer - 1));
+	if (power < 1)
+		return (!power ? 1 : 0);
+	return (nb * ft_recursive_power(nb, power - 1));
 }

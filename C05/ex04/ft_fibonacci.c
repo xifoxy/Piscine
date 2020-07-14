@@ -10,7 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_fibonacci(int index)
+int ft_fibonacci(int index)
 {
+    int dp[3];
+    int idx;
+    int ret;
 
+    dp[0] = 1;
+    dp[1] = 1;
+    if (index < 3)
+        return (index < 0 ? -1 : 1);
+    
+    idx = 2;
+    while (++idx <= index)
+    {
+        dp[2] = dp[1] + dp[0];
+        dp[0] = dp[1];
+        dp[1] = dp[2];
+    }
+    return (dp[2]);
 }

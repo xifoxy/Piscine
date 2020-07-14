@@ -13,11 +13,11 @@
 int	ft_iterative_power(int nb, int power)
 {
 	int ret;
-	int idx;
 
-	idx = -1;
-	ret = 1;
-	while (++idx < power)
+	if (power < 1)
+		return (power < 0 ? 1 : 0);
+	ret = nb;
+	while (--power)
 		ret *= nb;
-	return (!nb ? 1 : ret);
+	return (ret);
 }
