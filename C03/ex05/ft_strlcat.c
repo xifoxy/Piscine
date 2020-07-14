@@ -20,11 +20,9 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		idx -= -1;
 		dest -= -1;
 	}
-	while (*src && idx < size - 1)
+	while (*src && idx - 1 < size)
 	{
-		*dest = *src;
-		dest -= -1;
-		src -= -1;
+		*dest++ = *src++;
 		idx -= -1;
 	}
 	if (idx < size)
