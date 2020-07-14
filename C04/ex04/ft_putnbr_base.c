@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 16:40:15 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/09 16:49:59 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/14 17:53:12 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 int		ft_strlen(char *base)
 {
-	int idx;
-	int chk[256];
+	unsigned char	ch;
+	int				idx;
+	int				chk[256];
 
 	idx = 0;
 	while (idx < 256)
-		chk[idx++] = 0;
+	{
+		chk[idx] = 0;
+		++idx;
+	}
 	idx = 0;
 	while (base[idx])
 	{
-		if (chk[base[idx]] || base[idx] == '+' || base[idx] == '-')
+		ch = base[idx];
+		if (chk[(int)ch] || ch == '+' || ch == '-')
 			return (0);
-		chk[base[idx++]]++;
+		chk[(int)ch]++;
+		++idx;
 	}
 	return (idx);
 }

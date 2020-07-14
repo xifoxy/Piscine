@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 23:42:49 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/08 23:43:58 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/14 17:41:13 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_putstr(char *str)
 	idx = 0;
 	while (str[idx])
 	{
-		write(1, &str[idx++], 1);
+		write(1, &str[idx], 1);
+		++idx;
 	}
 }

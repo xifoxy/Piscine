@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 16:53:04 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/09 17:06:29 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/14 19:56:44 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,29 @@ int	isoperator(char ch)
 
 int	white_space(char ch)
 {
-	return (ch == ' ' || (ch >= 9 && ch <= 13) || isoperator(ch));
+	return (ch == ' ' || (ch >= 9 && ch <= 13));
 }
 
 int	ft_strlen(char *base)
 {
-	int idx;
-	int chk[256];
+	unsigned char	ch;
+	int				idx;
+	int				chk[256];
 
 	idx = 0;
 	while (idx < 256)
-		chk[idx++] = 0;
+	{
+		chk[idx] = 0;
+		++idx;
+	}
 	idx = 0;
 	while (base[idx])
 	{
-		if (chk[base[idx]] || white_space(base[idx]))
+		ch = base[idx];
+		if (chk[(int)ch] || white_space(base[idx]))
 			return (0);
-		chk[base[idx++]]++;
+		chk[(int)ch]++;
+		++idx;
 	}
 	return (idx);
 }
@@ -70,14 +76,13 @@ int	ft_atoi_base(char *str, char *base)
 	while (white_space(*str))
 		++str;
 	while (isoperator(*str))
-	{
-		if (*str == '-')
+		if (*str++ == '-')
 			mark *= -1;
-		++str;
-	}
 	while (*str)
 	{
 		idx = ft_get_idx(*str++, len, base);
+		if (idx == -1)
+			break ;
 		ret *= len;
 		ret += idx;
 	}

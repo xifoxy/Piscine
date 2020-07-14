@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 23:40:53 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/08 23:41:51 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/14 16:41:21 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strlen(char *str)
 	int idx;
 
 	idx = 0;
-	while (str[i])
-		++i;
-	return (i);
+	while (str[idx])
+		++idx;
+	return (idx);
 }
