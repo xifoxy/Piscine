@@ -6,7 +6,7 @@
 /*   By: xifoxy <xifoxy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 23:27:55 by xifoxy            #+#    #+#             */
-/*   Updated: 2020/07/14 23:27:55 by xifoxy           ###   ########.fr       */
+/*   Updated: 2020/07/15 23:14:47 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	ft_find_next_prime(int nb)
 	idx = nb;
 	while (!get_next_prime(idx))
 		++idx;
-	return idx;
+	return (idx);
 }

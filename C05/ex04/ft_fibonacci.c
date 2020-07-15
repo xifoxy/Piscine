@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 22:30:36 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/15 21:47:42 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/15 23:14:18 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	ft_fibonacci(int index)
 	dp[1] = 1;
 	if (index < 3)
 		return (index < 0 ? -1 : 1);
-	
 	idx = 2;
 	while (++idx <= index)
 	{
