@@ -55,4 +55,5 @@ int     main(int ac, char **ag)
             write(1, ag[ac]++, 1);
         write(1, "\n", 1);
     }
+    return (0);
 }

@@ -24,4 +24,5 @@ int main(int ac, char **ag)
         write(1, "\n", 1);
         ++idx;
     }
+    return (0);
 }
