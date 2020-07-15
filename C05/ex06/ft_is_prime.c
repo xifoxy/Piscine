@@ -18,11 +18,13 @@ int	ft_is_prime(int nb)
 		return (0);
 	if (nb < 4)
 		return (1);
-	if (nb % 2 || nb % 3)
+	if (!(nb % 2) || !(nb % 3))
 		return (0);
-	idx = 5;
-	while (idx * idx <= nb)
-		if (nb % idx == 0)
+	idx = 3;
+	while (idx * idx <= nb){
+		if (!(nb % 2) || !(nb % 3) || !(nb % idx))
 			return (0);
+		idx += 2;
+	}
 	return (1);
 }
