@@ -6,19 +6,19 @@
 /*   By: xifoxy <xifoxy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 00:49:27 by xifoxy            #+#    #+#             */
-/*   Updated: 2020/07/15 00:49:27 by xifoxy           ###   ########.fr       */
+/*   Updated: 2020/07/15 19:58:05 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int main(int ac, char **ag)
+int	main(int ac, char **ag)
 {
-    while (--ac)
-    {
-        while (*ag[ac])
-            write(1, ag[ac]++, 1);
-        write(1, "\n", 1);
-    }
-    return (0);
+	while (--ac)
+	{
+		while (*ag[ac])
+			write(1, ag[ac]++, 1);
+		write(1, "\n", 1);
+	}
+	return (0);
 }

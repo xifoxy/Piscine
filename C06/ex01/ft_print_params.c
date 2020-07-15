@@ -6,23 +6,23 @@
 /*   By: xifoxy <xifoxy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 00:44:36 by xifoxy            #+#    #+#             */
-/*   Updated: 2020/07/15 00:44:36 by xifoxy           ###   ########.fr       */
+/*   Updated: 2020/07/15 19:57:14 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int main(int ac, char **ag)
+int	main(int ac, char **ag)
 {
-    int idx;
+	int idx;
 
-    idx = 1;
-    while (idx < ac)
-    {
-        while (*ag[idx])
-            write(1, ag[idx]++, 1);
-        write(1, "\n", 1);
-        ++idx;
-    }
-    return (0);
+	idx = 1;
+	while (idx < ac)
+	{
+		while (*ag[idx])
+			write(1, ag[idx]++, 1);
+		write(1, "\n", 1);
+		++idx;
+	}
+	return (0);
 }
