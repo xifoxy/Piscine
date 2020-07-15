@@ -23,10 +23,5 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		++s1;
 		++s2;
 	}
-	if (idx == n)
-	{
-		++s1;
-		++s2;
-	}
 	return (*s1 - *s2);
 }
