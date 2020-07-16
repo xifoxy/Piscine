@@ -6,27 +6,22 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 22:30:36 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/15 23:31:39 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/16 19:41:26 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	fib(int n, int a, int b)
+{
+	if (n == 0)
+		return (a);
+	if (n == 1)
+		return (b);
+	return (fib(n - 1, b, a + b));
+}
+
 int	ft_fibonacci(int index)
 {
-	int dp[3];
-	int idx;
-
-	dp[0] = 1;
-	dp[1] = 1;
 	if (index < 0)
 		return (-1);
-	if (index < 3)
-		return (index ? 1 : 0);
-	idx = 2;
-	while (++idx <= index)
-	{
-		dp[2] = dp[1] + dp[0];
-		dp[0] = dp[1];
-		dp[1] = dp[2];
-	}
-	return (dp[2]);
+	return (fib(index, 0, 1));
 }
