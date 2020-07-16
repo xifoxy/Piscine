@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 01:33:07 by xifoxy            #+#    #+#             */
-/*   Updated: 2020/07/16 17:55:44 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/16 21:59:25 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int			valid(char *base, int len)
 	}
 	if (len <= 1)
 		return (0);
-	return (1);
+	return (len);
 }
 
 long long	get_atoi(char *str, char *base, int len)
