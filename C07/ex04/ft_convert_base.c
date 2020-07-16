@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 01:33:07 by xifoxy            #+#    #+#             */
-/*   Updated: 2020/07/16 15:13:55 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/16 17:55:44 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,14 +104,14 @@ char		*make_nbr(long long nbr, char *base, int len)
 
 char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	long long ret_atoi;
-	int len_f;
-	int len_t;
+	long long	ret_atoi;
+	int			len_from;
+	int			len_to;
 
-	len_f = valid(base_from, len_f);
-	len_t = valid(base_to, len_t);
-	if (!len_f || !len_t)
+	len_from = valid(base_from, 0);
+	len_to = valid(base_to, 0);
+	if (!len_from || !len_to)
 		return (0);
-	ret_atoi = (nbr, base_from, len_f);
-	return (make_nbr(ret_atoi, base_to, len_t));
+	ret_atoi = get_atoi(nbr, base_from, len_from);
+	return (make_nbr(ret_atoi, base_to, len_to));
 }
