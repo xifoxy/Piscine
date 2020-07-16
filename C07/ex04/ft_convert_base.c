@@ -3,32 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xifoxy <xifoxy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 01:33:07 by xifoxy            #+#    #+#             */
-/*   Updated: 2020/07/16 02:48:56 by xifoxy           ###   ########.fr       */
+/*   Updated: 2020/07/16 15:13:55 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int g_len_from;
-int g_len_to;
-
-int         is_valid_base(char *base, int len)
+int			valid(char *base, int len)
 {
-	int             chk[256];
-	int             idx;
-	unsigned char   ch;
+	int				chk[256];
+	int				idx;
+	unsigned char	ch;
 
 	idx = -1;
-	while (++idx < 256);
+	while (++idx < 256)
 		chk[idx] = 0;
 	len = 0;
 	while (base[len])
 	{
 		ch = base[len];
-		if ((ch == ' ' || (ch >= 9 && ch <= 13)) || chk[(int)ch] || ch == '-' || ch == '+')
+		if ((ch == ' ' || (ch >= 9 && ch <= 13))
+		|| chk[(int)ch] || ch == '-' || ch == '+')
 			return (0);
 		chk[(int)ch] = 1;
 		len++;
@@ -96,7 +94,7 @@ char		*make_nbr(long long nbr, char *base, int len)
 	nbr < 0 ? ret[0] = '-' : 0;
 	nbr = nbr < 0 ? -nbr : nbr;
 	ret[sz] = 0;
-	while(nbr)
+	while (nbr)
 	{
 		ret[--sz] = base[nbr % len];
 		nbr /= len;
@@ -107,9 +105,13 @@ char		*make_nbr(long long nbr, char *base, int len)
 char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	long long ret_atoi;
+	int len_f;
+	int len_t;
 
-	if (!is_valid_base(base_from, g_len_from) || !is_valid_base(base_to, g_len_to))
+	len_f = valid(base_from, len_f);
+	len_t = valid(base_to, len_t);
+	if (!len_f || !len_t)
 		return (0);
-	ret_atoi = (nbr, base_from, g_len_from);
-	return (make_nbr(ret_atoi, base_to, g_len_to));
+	ret_atoi = (nbr, base_from, len_f);
+	return (make_nbr(ret_atoi, base_to, len_t));
 }

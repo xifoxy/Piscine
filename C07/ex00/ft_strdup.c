@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xifoxy <xifoxy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 01:12:22 by xifoxy            #+#    #+#             */
-/*   Updated: 2020/07/15 01:12:22 by xifoxy           ###   ########.fr       */
+/*   Updated: 2020/07/16 14:47:29 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char    *ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
-    int     idx;
-    char    *ret;
+	int		idx;
+	char	*ret;
 
-    idx = 0;
-    while (src[idx])
-        ++idx;
-    ret = (char*)malloc(idx + 1);
-    ret[idx] = 0;
-    while (--idx >= 0)
-        ret[idx] = src[idx];
-    return (ret);
+	idx = 0;
+	while (src[idx])
+		++idx;
+	ret = (char*)malloc(idx + 1);
+	ret[idx] = 0;
+	while (--idx >= 0)
+		ret[idx] = src[idx];
+	return (ret);
 }
