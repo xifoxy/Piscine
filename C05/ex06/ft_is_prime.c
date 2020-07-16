@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 21:28:33 by xifoxy            #+#    #+#             */
-/*   Updated: 2020/07/15 23:39:57 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/16 14:29:58 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_is_prime(int nb)
 	if (!(nb % 2) || !(nb % 3))
 		return (0);
 	idx = 3;
-	while (idx * idx <= nb){
+	while (idx * idx <= nb)
+	{
 		if (!(nb % 2) || !(nb % 3) || !(nb % idx))
 			return (0);
 		idx += 2;
