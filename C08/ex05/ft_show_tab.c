@@ -20,7 +20,7 @@ void	ft_print_size(int sz)
 	if (!sz)
 		return ;
 	ch = '0' + sz % 10;
-	get_size(sz / 10);
+	ft_print_size(sz / 10);
 	write(1, &ch, 1);
 }
 
