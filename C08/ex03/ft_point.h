@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xifoxy <xifoxy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 00:53:33 by xifoxy            #+#    #+#             */
-/*   Updated: 2020/07/16 00:53:33 by xifoxy           ###   ########.fr       */
+/*   Updated: 2020/07/19 01:27:32 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 # define FT_POINT_H
 
-typedef struct  s_point
+typedef struct	s_point
 {
-    int x;
-    int y;
-}               t_point;
+	int	x;
+	int	y;
+}				t_point;
 
 #endif

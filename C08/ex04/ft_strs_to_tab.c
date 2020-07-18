@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xifoxy <xifoxy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 00:57:00 by xifoxy            #+#    #+#             */
-/*   Updated: 2020/07/16 00:57:00 by xifoxy           ###   ########.fr       */
+/*   Updated: 2020/07/19 01:29:50 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void				ft_strcpy(char *dest, char *dest2, char *src)
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	t_stock_str *ret;
-	int         idx;
+	int			idx;
 
 	if (!(ret = (t_stock_str*)malloc(sizeof(t_stock_str) * (ac + 1))))
 		return (0);
