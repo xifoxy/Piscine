@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int			valid(char *base, int len)
+int		valid(char *base, int len)
 {
 	int				chk[256];
 	int				idx;
@@ -36,11 +36,11 @@ int			valid(char *base, int len)
 	return (len);
 }
 
-long long	get_atoi(char *str, char *base, int len)
+int		get_atoi(char *str, char *base, int len)
 {
-	long long	ret;
-	int			mark;
-	int			idx;
+	int	ret;
+	int	mark;
+	int	idx;
 
 	ret = 0;
 	mark = 1;
@@ -57,13 +57,13 @@ long long	get_atoi(char *str, char *base, int len)
 				break ;
 		if (idx == len)
 			break ;
-		ret = ret * len;
+		ret += ret * len + idx;
 		++str;
 	}
 	return (ret * mark);
 }
 
-int			get_nbr_len(long long nbr, int len)
+int		get_nbr_len(long long nbr, int len)
 {
 	int ret;
 
@@ -78,7 +78,7 @@ int			get_nbr_len(long long nbr, int len)
 	return (ret);
 }
 
-char		*make_nbr(long long nbr, char *base, int len)
+char	*make_nbr(long long nbr, char *base, int len)
 {
 	char		*ret;
 	int			sz;
@@ -102,7 +102,7 @@ char		*make_nbr(long long nbr, char *base, int len)
 	return (ret);
 }
 
-char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	long long	ret_atoi;
 	int			len_from;
