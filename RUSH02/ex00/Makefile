@@ -1,4 +1,4 @@
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
 TARGET = rush-02
 SRCDIR = src
