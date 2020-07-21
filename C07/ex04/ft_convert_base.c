@@ -57,7 +57,7 @@ int		get_atoi(char *str, char *base, int len)
 				break ;
 		if (idx == len)
 			break ;
-		ret += ret * len + idx;
+		ret = ret * len + idx;
 		++str;
 	}
 	return (ret * mark);
