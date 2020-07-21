@@ -6,7 +6,7 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 01:13:10 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/22 01:13:53 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/22 03:06:47 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_atoi(char *str)
 
 	ret = 0;
 	mark = 1;
-	while (is_white_space(*str))
+	while (is_valid(*str))
 		++str;
 	while ((*str == '-' || *str == '+'))
 		if (*str++ == '-')
@@ -40,10 +40,10 @@ void	init(void)
 	g_fun[3] = sum;
 	g_fun[4] = sub;
 	g_oper[42] = 0;
-	g_oper[43] = 1;
-	g_oper[45] = 2;
-	g_oper[47] = 3;
-	g_oper[37] = 4;
+	g_oper[47] = 1;
+	g_oper[37] = 2;
+	g_oper[43] = 3;
+	g_oper[45] = 4;
 }
 
 int		main(int ac, char **ag)
@@ -59,16 +59,16 @@ int		main(int ac, char **ag)
 	oper = ag[2][0];
 	if (ag[2][1] || !is_valid(oper))
 	{
-		ft_putnbr("0\n");
+		putstr("0\n");
 		return (0);
 	}
 	a = ft_atoi(ag[1]);
 	b = ft_atoi(ag[3]);
-	idx = g_oper[oper];
-	if (b == 0 && (oper == '/' || oper == '*'))
+	idx = g_oper[(int)oper];
+	if (b == 0 && (oper == '/' || oper == '%'))
 		putstr((oper == '/' ? ERR_DIV : ERR_MOD));
 	else
 		ft_putnbr(g_fun[idx](a, b));
-	putstr("\n");
+	write(1, "\n", 1);
 	return (0);
 }

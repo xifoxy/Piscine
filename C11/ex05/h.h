@@ -6,12 +6,14 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 01:14:13 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/22 01:21:06 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/22 02:42:56 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef H_H
 # define H_H
+
+# include <unistd.h>
 
 # define ERR_DIV "Stop : division by zero"
 # define ERR_MOD "Stop : modulo by zero"

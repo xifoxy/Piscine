@@ -6,9 +6,11 @@
 /*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 01:16:54 by sgang             #+#    #+#             */
-/*   Updated: 2020/07/22 01:23:11 by sgang            ###   ########.fr       */
+/*   Updated: 2020/07/22 02:43:52 by sgang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "h.h"
 
 void	putstr(char *str)
 {
@@ -43,5 +45,5 @@ void	recursive(int nb)
 	ch = '0';
 	ch += (nb < 0 ? -(nb % 10) : (nb % 10));
 	recursive(nb / 10);
-	putstr(ch);
+	write(1, &ch, 1);
 }
