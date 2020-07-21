@@ -24,8 +24,6 @@ void	sol(int prev, int depth, int n)
 		write(1, ", ", 2);
 		return ;
 	}
-	if (prev == 9)
-		return ;
 	i = prev;
 	while (++i < 10)
 	{
