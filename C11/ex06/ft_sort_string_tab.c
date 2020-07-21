@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_string_tab.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/22 01:23:53 by sgang             #+#    #+#             */
+/*   Updated: 2020/07/22 01:24:31 by sgang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int		ft_strcmp(char *s1, char *s2)
 {
 	while (*s1 && *s2 && *s1 == *s2)
@@ -8,17 +20,17 @@ int		ft_strcmp(char *s1, char *s2)
 	return (*s1 - *s2);
 }
 
-int get_sz(char **tab)
+int		get_sz(char **tab)
 {
 	int ret;
 
 	ret = 0;
 	while (tab[ret])
 		++ret;
-	return(ret);
+	return (ret);
 }
 
-void ft_sort_string_tab(char **tab)
+void	ft_sort_string_tab(char **tab)
 {
 	char	*temp;
 	int		x;

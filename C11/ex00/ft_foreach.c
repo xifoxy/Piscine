@@ -1,8 +1,20 @@
-void ft_foreach(int *tab, int length, void (*f)(int))
-{
-    int idx;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/22 01:02:12 by sgang             #+#    #+#             */
+/*   Updated: 2020/07/22 01:02:52 by sgang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    idx = 0;
-    while(idx < length)
-        f(tab[idx++]);
+void	ft_foreach(int *tab, int length, void (*f)(int))
+{
+	int idx;
+
+	idx = 0;
+	while (idx < length)
+		f(tab[idx++]);
 }

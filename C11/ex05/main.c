@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgang <xifoxy.ru@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/22 01:13:10 by sgang             #+#    #+#             */
+/*   Updated: 2020/07/22 01:13:53 by sgang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "h.h"
 
 int	g_oper[128];
 int (*g_fun[5])(int, int);
 
-int     ft_atoi(char *str)
+int		ft_atoi(char *str)
 {
 	int	ret;
 	int	mark;
@@ -20,14 +32,13 @@ int     ft_atoi(char *str)
 	return (ret * mark);
 }
 
-void init(void)
+void	init(void)
 {
 	g_fun[0] = mul;
 	g_fun[1] = div;
 	g_fun[2] = mod;
 	g_fun[3] = sum;
 	g_fun[4] = sub;
-
 	g_oper[42] = 0;
 	g_oper[43] = 1;
 	g_oper[45] = 2;
@@ -35,7 +46,7 @@ void init(void)
 	g_oper[37] = 4;
 }
 
-int     main(int ac, char **ag)
+int		main(int ac, char **ag)
 {
 	int		a;
 	int		b;
