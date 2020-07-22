@@ -1,4 +1,4 @@
-#include "total.h"
+#include "bsq.h"
 
 int		parse_base_info(t_board *board, char *info)
 {
@@ -27,19 +27,21 @@ char	*read_line(int fd)
 	int		idx;
 	int		sz;
 
+	line = 0;
 	idx = 0;
 	sz = 0;
+	
 	line = allocation_char(line, &sz);
 	while (read(fd, &ch, 1))
 	{
-		if (ch == "\n")
+		if (ch == '\n')
 		{
 			line[idx] = 0;
 			break;
 		}
 		if (idx + 1 == sz)
 			line = allocation_char(line, &sz);
-		line[idx] = ch;
+		line[idx++] = ch;
 	}
 	if (!idx)
 		free_char(line);
@@ -53,13 +55,13 @@ int		read_map(t_board *board, char *line, int *idx)
 	len = ft_strlen(line);
 	if (board->width == 0)
 		board->width = len;
-	if (++(*idx) == board->height || is_valid_board(board, line) || board->width != len)
+	if ((*idx) == board->height || !is_valid_board(board, line) || board->width != len)
 	{
 		free_char(line);
 		free_t_board(board, *idx);
 		return (0);
 	}
-	board->map[(*idx)] = line;
+	board->map[(*idx)++] = line;
 	return (1);
 }
 
@@ -69,14 +71,14 @@ t_board	*read_file(int fd)
 	char 	*line;
 	int		idx;
 
-	idx = -1;
+	idx = 0;
 	board = allocation_t_board();
 	line = read_line(fd);
 	if (!line || !parse_base_info(board, line))
 		return (0);
 	board->map = allocation_char_2d(board->height);
 	while ((line = read_line(fd)))
-		if (!read_map(&idx, board, line))
+		if (!read_map(board, line, &idx))
 			return (0);
 	if (idx != board->height)
 	{

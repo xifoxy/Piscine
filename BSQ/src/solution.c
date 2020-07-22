@@ -1,18 +1,17 @@
-#include "total.h"
+#include "bsq.h"
 
-void	*find_bsq(t_board *board, t_square *square, int x, int **dp)
+t_square	*find_bsq(t_board *board, t_square *square, int x, int **dp)
 {
 	int	y;
-	int len;
 
 	y = -1;
 	while (++y < board->width)
 	{
-		if ((x == 0 || y == 0) && square->sz < dp[x][y])
+		if ((x == 0 || y == 0) && dp[x][y] > square->length)
 			renew_square(square, x, y, dp[x][y]);
-		if (x && y)
+		if (x && y && dp[x][y] == 1)
 			dp[x][y] = renew_dp(dp, x, y);
-		if (x && y && square->sz < dp[x][y])
+		if (x && y && square->length < dp[x][y])
 			renew_square(square, x, y, dp[x][y]);
 	}
 	return (square);

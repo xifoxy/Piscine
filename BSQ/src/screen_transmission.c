@@ -1,4 +1,4 @@
-#include "total.h"
+#include "bsq.h"
 
 void	painting(t_board *board, t_square *square)
 {
@@ -7,11 +7,11 @@ void	painting(t_board *board, t_square *square)
 	char	full;
 
 	full = board->full;
-	x = square->x - square->sz;
-	while (++x <= square->x)
+	x = square->height - square->length;
+	while (++x <= square->height)
 	{
-		y = square->y - square->sz;
-		while (++y <= square->y)
+		y = square->width - square->length;
+		while (++y <= square->width)
 			board->map[x][y] = full;
 	}
 }
@@ -25,6 +25,6 @@ void	print(t_board *board, t_square *square)
 	while (++idx < board->height)
 	{
 		ft_putstr(board->map[idx], board->width);
-		ft_putstr('\n');
+		ft_putchar('\n');
 	}
 }

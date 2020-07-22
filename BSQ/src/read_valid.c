@@ -1,11 +1,11 @@
-#include "total.h"
+#include "bsq.h"
 
 int		is_printable(char ch)
 {
 	return (ch >= ' ' && ch <= '~');
 }
 
-int		is_numer(char ch)
+int		is_number(char ch)
 {
 	return (ch >= '0' && ch <= '9');
 }
@@ -14,7 +14,6 @@ int		is_valid_info(char *info, int len)
 {
 	char	ch;
 	int		dp[128];
-	int		len;
 	int		idx;
 
 	idx = -1;
@@ -34,7 +33,7 @@ int		is_valid_board(t_board *board, char *line)
 {
 	while (*line)
 	{
-		if (*line != board->full && *line != board->empty)
+		if (!(*line != board->barrier || *line != board->empty))
 			return (0);
 		++line;
 	}

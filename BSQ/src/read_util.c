@@ -1,4 +1,4 @@
-#include "total.h"
+#include "bsq.h"
 
 int		ft_atoi(char *str, int len)
 {
@@ -9,7 +9,7 @@ int		ft_atoi(char *str, int len)
 	ret = 0;
 	if (*str == '0')
 		return (ret);
-	while (++idx < len - 3)
+	while (++idx < len)
 	{
 		if (!is_number(str[idx]))
 			return (0);
@@ -45,6 +45,5 @@ void	ft_putchar(char ch)
 
 void	ft_putstr(char *str, int len)
 {
-	
 	write(1, str, len);
 }

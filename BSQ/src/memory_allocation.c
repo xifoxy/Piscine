@@ -1,4 +1,4 @@
-#include "total.h"
+#include "bsq.h"
 
 t_board		*allocation_t_board(void)
 {
@@ -21,9 +21,9 @@ t_square	*allocation_t_square(void)
 
 	if (!(ret = (t_square *)malloc(sizeof(t_square))))
 		exit(0);
-	ret->x = 0;
-	ret->y = 0;
-	ret->sz = -1;
+	ret->height = 0;
+	ret->width = 0;
+	ret->length = -1;
 	return (ret);
 }
 
@@ -43,7 +43,7 @@ char		*allocation_char(char *src, int *sz)
 	*sz = *sz ? *sz << 1 : 2;
 	if (!(ret = (char *)malloc(*sz)))
 		exit(0);
-	if (sz == 2)
+	if (*sz == 2)
 		return (ret);
 	ft_strncpy(ret, src, *sz);
 	free_char(src);

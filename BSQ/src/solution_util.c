@@ -1,4 +1,4 @@
-#include "total.h"
+#include "bsq.h"
 
 int			**fill_board(t_board *board)
 {
@@ -22,10 +22,9 @@ int			**fill_board(t_board *board)
 
 void	renew_square(t_square *square, int x, int y, int sz)
 {
-	square->sz = sz;
-	square->x = x;
-	square->y = y;
-	return (square);
+	square->length = sz;
+	square->height = x;
+	square->width = y;
 }
 
 int		get_min(int a, int b, int c)

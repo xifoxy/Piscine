@@ -1,4 +1,4 @@
-#include "total.h"
+#include "bsq.h"
 
 int main(int ac, char **ag)
 {

@@ -1,11 +1,11 @@
-#include "total.h"
+#include "bsq.h"
 
-void		free_char(char *arr)
+void	free_char(char *arr)
 {
 	free(arr);
 }
 
-void		free_char_2d(char **arr, int sz)
+void	free_char_2d(char **arr, int sz)
 {
 	int idx;
 
@@ -15,11 +15,8 @@ void		free_char_2d(char **arr, int sz)
 	free(arr);
 }
 
-void    free_t_board(t_board *info, int sz)
+void	free_t_board(t_board *info, int sz)
 {
-	int idx;
-	int	hei;
-
 	free_char_2d(info->map, sz);
 	free(info);
 }
@@ -29,7 +26,7 @@ void	free_int(int *arr)
 	free(arr);
 }
 
-void    free_int_2d(int **arr, int sz)
+void	free_int_2d(int **arr, int sz)
 {
 	int idx;
 

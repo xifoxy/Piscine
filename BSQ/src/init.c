@@ -1,7 +1,6 @@
+#include "bsq.h"
 
-#include "total.h"
-
-t_board	*make_board(char *file)
+t_board		*make_board(char *file)
 {
 	int fd;
 
@@ -13,11 +12,10 @@ t_board	*make_board(char *file)
 	return (read_file(fd));
 }
 
-void	bsq(char *file)
+void		bsq(char *file)
 {
 	t_board		*board;
 	t_square	*square;
-	int			flag;
 
 	if (!file)
 		board = make_board(0);
@@ -29,16 +27,15 @@ void	bsq(char *file)
 		return ;
 	}
 	square = solution(board);
-	flag = square->sz;
-	if (!(flag))
+	if (!(square->length))
 		ft_putstr(MAP_ERR, ERR_LEN);
 	else
-		pritn(board, square);
+		print(board, square);
 	free_t_board(board, board->height);
 	free(square);
 }
 
-void	init(int ac, char **ag)
+void		init(int ac, char **ag)
 {
 	int idx;
 
@@ -48,8 +45,10 @@ void	init(int ac, char **ag)
 	else
 	{
 		while (++idx < ac)
+		{
 			bsq(ag[idx]);
-		if (!(idx + 1 != ac))
-			ft_putchar('\n');
+			if (idx + 1 != ac)
+				ft_putchar('\n');
+		}
 	}
 }
