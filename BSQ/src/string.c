@@ -45,5 +45,6 @@ void	ft_putchar(char ch)
 
 void	ft_putstr(char *str, int len)
 {
+	
 	write(1, str, len);
 }

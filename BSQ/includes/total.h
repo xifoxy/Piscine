@@ -22,7 +22,8 @@ typedef struct  s_board
 	int			height;
 }				t_board;
 
-# define MAP_ERR "map error\n"
+# define MAP_ERR "Map Error\n"
+# define ERR_LEN 10
 // free.c
 void		free_char(char *arr);
 void		free_char_2d(char **arr, int sz);

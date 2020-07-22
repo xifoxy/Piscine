@@ -17,6 +17,7 @@ void	bsq(char *file)
 {
 	t_board		*board;
 	t_square	*square;
+	int			flag;
 
 	if (!file)
 		board = make_board(0);
@@ -24,12 +25,13 @@ void	bsq(char *file)
 		board = make_board(file);
 	if (!board)
 	{
-		ft_putstr(MAP_ERR);
+		ft_putstr(MAP_ERR, ERR_LEN);
 		return ;
 	}
 	square = solution(board);
-	if (!square->sz)
-		ft_putstr(MAP_ERR);
+	flag = square->sz;
+	if (!(flag))
+		ft_putstr(MAP_ERR, ERR_LEN);
 	else
 		pritn(board, square);
 	free_t_board(board, board->height);
@@ -48,6 +50,6 @@ void	init(int ac, char **ag)
 		while (++idx < ac)
 			bsq(ag[idx]);
 		if (!(idx + 1 != ac))
-			ft_putchar("\n");
+			ft_putchar('\n');
 	}
 }
