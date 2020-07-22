@@ -44,11 +44,10 @@ void	init(int ac, char **ag)
 	if (ac == 1)
 		bsq(0);
 	else
+	{
 		while (++idx < ac)
 			bsq(ag[idx]);
-}
-
-void print(t_board board, t_square square)
-{
-	
+		if (!(idx + 1 != ac))
+			ft_putchar("\n");
+	}
 }

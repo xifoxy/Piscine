@@ -43,7 +43,7 @@ void	ft_putchar(char ch)
 	write(1, &ch, 1);
 }
 
-void	ft_putstr(char *str)
+void	ft_putstr(char *str, int len)
 {
-	write(1, str, ft_strlen(str));
+	write(1, str, len);
 }

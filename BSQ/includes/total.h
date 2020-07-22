@@ -39,7 +39,7 @@ t_board		*make_board(char *file);
 void		ft_strncpy(char *dest, char *src, int sz);
 int			ft_strlen(char *s);
 void		ft_putchar(char ch);
-void		ft_putstr(char *str);
+void		ft_putstr(char *str, int len);
 int			ft_atoi(char *str, int len);
 
 // valid.c
@@ -66,8 +66,8 @@ t_square	*solution(t_board *board);
 
 // solution_util.c
 int			**fill_board(t_board *board);
-void	renew_square(t_square *square, int x, int y, int sz);
-int		get_min(int a, int b, int c);
-int		renew_dp(int **dp, int x, int y);
+void		renew_square(t_square *square, int x, int y, int sz);
+int			get_min(int a, int b, int c);
+int			renew_dp(int **dp, int x, int y);
 
 #endif
