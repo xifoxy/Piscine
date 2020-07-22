@@ -48,7 +48,6 @@ int			is_numer(char ch);
 int			is_valid_info(char *info, int len);
 int			is_valid_board(t_board *board, char *line);
 
-
 // memory.c
 t_board		*allocation_t_board(void);
 char		**allocation_char_2d(int sz);
@@ -64,5 +63,11 @@ t_board		*read_file(int fd);
 int			**fill_board(t_board *board);
 t_square	*find_bsq(t_board *board, t_square *square, int x, int **dp);
 t_square	*solution(t_board *board);
+
+// solution_util.c
+int			**fill_board(t_board *board);
+void	renew_square(t_square *square, int x, int y, int sz);
+int		get_min(int a, int b, int c);
+int		renew_dp(int **dp, int x, int y);
 
 #endif
