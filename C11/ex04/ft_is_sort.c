@@ -16,9 +16,9 @@ int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 	int cur;
 	int idx;
 
-	idx = 0;
+	idx = -1;
 	bef = 0;
-	while (idx + 1 < length)
+	while (++idx + 1 < length)
 	{
 		cur = f(tab[idx], tab[idx + 1]);
 		if (cur == 0)
